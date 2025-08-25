@@ -1,0 +1,10 @@
+import express from "express";
+import authMiddleware from "../middlewares/authMiddleware.js";
+import taskController from "../controllers/taskController.js";
+const router = express.Router();
+router.use(authMiddleware);
+router.post("/", taskController.createTask);
+router.get("/", taskController.getTask);
+router.patch("/:id", taskController.updateTask);
+router.delete("/:id", taskController.deleteTask);
+export default router;
