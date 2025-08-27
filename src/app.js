@@ -12,4 +12,7 @@ app.use(express.json());
 
 app.use("/api", apiRoutes);
 app.use(errorHandler);
+app.get("/", (req, res) => {
+	res.send("Api is Live🚀");
+});
 export default app;
